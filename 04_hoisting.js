@@ -10,6 +10,10 @@ console.log(i) //undefined
 i  = 42
 console.log(i)
 
+j=45
+console.log(j)
+var j
+
 //=======================
 // переменные let и const не подвержены хоистингу
 
