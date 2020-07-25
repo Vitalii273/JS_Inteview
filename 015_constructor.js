@@ -131,3 +131,14 @@ animal.speak = function speak() {
 };
 animal.speak();
 console.log(animal.test('caterpiller'));
+
+
+//===========
+const User = function (name) {
+    this.name = name;
+};
+
+const Brendan = new User("Brendan");
+const James = new Brendan.constructor("James");
+
+const result = James instanceof User;
