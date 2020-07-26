@@ -1,6 +1,26 @@
 // __proto__ => parent class ES6
 // Object.getPrototypeOf() ES5
 
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+
+Person.prototype.nationality = "English";
+
+function Person1(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+
+Person1.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
 function Cat(name, color) {
     this.name = name;
     this.color = color
@@ -20,13 +40,13 @@ console.log(cat.constructor)
 
 //=========================
 
-function Person() {
+function Person2() {
 }k
 
 Person.prototype.legs = 2
 Person.prototype.skin = 'white'
 
-const person = new Person()
+const person = new Person2()
 person.name = 'Vitalii'
 console.log('skin' in person) //true
 console.log(person.legs) // 2
