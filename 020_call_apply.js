@@ -1,5 +1,6 @@
-// ======================== call ======================
-
+/**
+ * ======================== call ======================
+ */
 const catObj = {
     breed: 'persian',
     name: 'bubbles'
@@ -26,7 +27,10 @@ function speakDog(food) {
 
 speakDog.call(dogObj, "salmon");
 
-// ====================== apply =====================
+/**
+ * ====================== apply =====================
+ */
+
 // apply() is similar to call() but there are some differences...
 
 const dogObj1 = {
@@ -49,7 +53,7 @@ function breakfast(a, b, c) {
 
 console.log(breakfast(...someFood))
 
-// Here we using null because there is no object and only uor arguments as an array (someFood)
+// Here we using null because there is no object and only our arguments as an array (someFood)
 console.log(breakfast.apply(null, someFood))
 
 // You can also use apply on built in JS functions
