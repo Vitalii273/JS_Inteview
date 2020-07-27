@@ -1,4 +1,20 @@
 //============== Bind ===================
+
+// How to create custom bind?
+function bind(context, fn) {
+    return function (...args) {
+        fn.apply(context, ...args)
+    }
+}
+
+const testBind = {first: 'test', second: 'bind'}
+
+function logTest() {
+    console.log(`${this.first} ${this.second}`)
+}
+
+bind(testBind, logTest)()
+// ======================================
 const user = {
     data: [
         {name: "T. John", age: 37},
@@ -39,6 +55,7 @@ function greet(gender, age, name) {
         return "Hey, " + name + ".";
     }
 }
+
 // И мы используем bind() метод, чтобы каррировать нашу функцию greet(). Как мы говорили ранее, первый аргумент метода bind() будет иметь значение this.
 // В общем, мы передаем null, так как мы не используем this в функции
 let greetAnAdultMale = greet.bind(null, "male", 45);
