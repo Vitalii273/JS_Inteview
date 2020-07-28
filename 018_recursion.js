@@ -1,4 +1,6 @@
-// ================= recursion ==================
+/**
+ * ================= recursion ==================
+ */
 // Два способа мышления
 // В качестве первого примера напишем функцию pow(x, n), которая возводит x в натуральную степень n. Иначе говоря, умножает x на само себя n раз.
 
@@ -88,8 +90,9 @@ function sumSalaries(department) {
 
 console.log(sumSalaries(company)); // 6700
 
-//====================== Связанный список ==================
-
+/**
+ * ====================== Связанный список ==================
+ */
 // Пример:
 
 let list = {
@@ -118,8 +121,8 @@ function printList(list) {
 printList(list);
 
 // Вывод односвязного списка в обратном порядке
-function printListRevers(list){
-    if(list.next){
+function printListRevers(list) {
+    if (list.next) {
         printListRevers(list.next)
     }
     console.log(list.value)

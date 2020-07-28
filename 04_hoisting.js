@@ -1,16 +1,17 @@
-console.log(sum(1,41))
+console.log(sum(1, 41))
 
-function sum(a,b){
+function sum(a, b) {
     return a + b;
 }
+
 // console.log(sum(1,41))
 //=======================
 var i
 console.log(i) //undefined
-i  = 42
+i = 42
 console.log(i)
 
-j=45
+j = 45
 console.log(j)
 var j
 
@@ -26,7 +27,10 @@ var j
 // console.log(num)
 
 //======================
-//Function Expression & Function Declaration
+/**
+ * Function Expression & Function Declaration
+ */
+
 // console.log(square(25))
 
 // function square(num) { //function Declaration
@@ -34,6 +38,6 @@ var j
 // }
 
 var square = function square(num) { //Function Expression можно использовать только после того ка она определена
-    return num **2
+    return num ** 2
 }
 console.log(square(25))

@@ -19,7 +19,10 @@ for (var i = 0; i < 5; i++) {
 result[2]()
 result[4]()
 
-// ================ Function Expression ====================
+/**
+ * ================ Function Expression ====================
+ */
+
 // Функция в JavaScript – это не магическая языковая структура, а особого типа значение.Синтаксис, который мы использовали до этого, называется Function Declaration (Объявление Функции):
 
 // function sayHi() {
@@ -75,6 +78,6 @@ let sayHeey = function () {
     alert("Привет");
 };
 
-let func1= sayHeey;
+let func1 = sayHeey;
 // ...
 // Результат был бы таким же.
