@@ -9,7 +9,7 @@
 // equality operators (==, >=, <=, !=) forbidden for whole strings
 
 function string_cmp(a, b) {
-return a.localeCompare(b)
+return a.toLowerCase().localeCompare(b.toLowerCase())
 
 //	return 0 if a == b
 //	return any negative number if a < b
@@ -17,4 +17,4 @@ return a.localeCompare(b)
 
 }
 
-console.log(string_cmp('b','a'))
+console.log(string_cmp('b','B'))
