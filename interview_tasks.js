@@ -67,3 +67,18 @@ console.log(shuffle1(songs))
 
 
 
+function memo(){
+    const state ={};
+    return (a1, a2) =>{
+        const key = `${a1}:${a2}`;
+        if(!state[key]){
+            state[key] = a1 + a2;
+        }
+        return  state[key];
+    }
+}
+
+
+
+const calc = memo();
+calc(1,2)
