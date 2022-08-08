@@ -17,27 +17,27 @@
 //     };
 // }
 
-// function memo(f) {
-//     const store = {};
-//     const a = Array.prototype;
-//     return  function() {
-//         const key = JSON.stringify(a.reduce.call(a.sort.call(arguments), (x, y, i) => ({ ...x, [i]: y }), {}) );
-//         return (key in store) ? store[key] : (store[key] = f(...arguments));
-//     };
-// }
-//
-// const sumM = memo(sum);
-//
-// function sum(a, b) {
-//     console.log("!!!!");
-//     return a + b;
-// }
-//
-//
-// console.log(sumM(5, 1));
-// console.log(sumM(4, 1));
+function memo(f) {
+    const store = {};
+    const a = Array.prototype;
+    return  function() {
+        const key = JSON.stringify(a.reduce.call(a.sort.call(arguments), (x, y, i) => ({ ...x, [i]: y }), {}) );
+        return (key in store) ? store[key] : (store[key] = f(...arguments));
+    };
+}
 
-//========================================
+const sumM = memo(sum);
+
+function sum(a, b) {
+    console.log("!!!!");
+    return a + b;
+}
+
+
+console.log(sumM(5, 1));
+console.log(sumM(4, 1));
+
+// ========================================
 function byteLength(str) {
     // returns the byte length of an utf8 string
     var s = str.length;
@@ -70,5 +70,30 @@ function chunk(s, maxBytes) {
     return result;
 }
 
-console.log(chunk("Hey there! € 100 to pay", 12));
+console.log(chunk("Hey there! € 100 to pay", 5000));
 // -> [ 'Hey there!', '€ 100 to', 'pay' ]
+
+function byteLength1(str) {
+    let s = str.length;
+    for (var i=str.length-1; i>=0; i--) {
+        var code = str.charCodeAt(i);
+        if (code > 0x7f && code <= 0x7ff) s++;
+        if (code > 0x7ff && code <= 0xffff) s+=2;
+        if (code > 0xffff && code < 0x10000) s+=3;
+        if (code >= 0x10000 && code <= 0x10FFFF) s+=4;
+    }
+    return s;
+}
+
+let phrase1 = 'Hey there! € 100 to pay'
+
+console.log(byteLength1(phrase1), Buffer.from(phrase1,"utf-8").byteLength)
+
+const arr = ['banana', 'banana', 'banana', 'yogurt', 'cocoa', 'cocoa']
+
+console.log(Object.entries(
+    arr.reduce((counter, str) => ({
+        ...counter,
+        [str]: (counter[str] ?? 0) + 1,
+    }), {})
+).sort((x, y) => y[1] - x[1]).map(x => x[0]))

@@ -1,5 +1,6 @@
 const people = [
     {name: 'Anna', age: 10, budget: 3000},
+    {name: 'Anna', age: 10, budget: 3000},
     {name: 'Igor', age: 20, budget: 40000},
     {name: 'John', age: 30, budget: 50000}
 ];

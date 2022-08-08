@@ -41,7 +41,7 @@ console.log(cat.constructor)
 //=========================
 
 function Person2() {
-}k
+}
 
 Person.prototype.legs = 2
 Person.prototype.skin = 'white'

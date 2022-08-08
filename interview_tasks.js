@@ -28,3 +28,42 @@ arr.forEach(x => {
     setTimeout(() => console.log(x), x)
 });
 
+const songs = ['song 1', 'song 2', 'song 3'];
+
+//const shuffledArr = ['song 2', 'song 3', 'song 1']
+
+
+// 2 0 2 ,  0 1 2
+
+const shuffle = (array) => {
+    let tmp;
+    for (let i = 0; i < array.length; i++) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        tmp = array[i];
+        array[i] = array[randomIndex];
+        array[randomIndex] = tmp;
+    }
+    return array
+}
+
+console.log(shuffle(songs))
+
+const shuffle1 = (array) => {
+    const indexes = new Set()
+    const newArray = []
+    while (newArray.length < array.length) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        if (indexes.has(randomIndex)) {
+            continue
+        }
+        newArray.push(array[randomIndex])
+        indexes.add(randomIndex)
+
+    }
+    return newArray;
+}
+
+console.log(shuffle1(songs))
+
+
+
