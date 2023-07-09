@@ -159,6 +159,3 @@ function parallelLimit(urls, limit, callback) {
     }
 
 }
-console.log('test');
-console.log('test');
-console.log('test');
