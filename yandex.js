@@ -158,3 +158,5 @@ function parallelLimit(urls, limit, callback) {
         tmpLimit --;
     }
 }
+
+console.log('test')
